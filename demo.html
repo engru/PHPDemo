@@ -1,0 +1,104 @@
+<html>
+<head>
+	<title>test</title>
+	<!--外部加载-->
+    <script src="res/jquery-2.0.3.min.js" type="text/javascript"></script>
+	<script src="link.js"type="text/javascript"></script>
+    <script type="text/javascript">
+			$(document).ready(function(){
+				$("button,#login-popup-login-button").bind("click",function(){
+					//$(".signup-popup-left").append("<div>sdkaaa</div>");
+					$("p").slideToggle();
+					//alert("xxx");
+					//if(0){
+					//var form=$("form")[0];
+					//form.action = "test.php";
+					//form.submit();
+					//}
+					
+					$.ajax({
+						type:'POST',
+						url:"test.php",
+						data:$("form").serialize(),
+						success:function(str){
+							$(".signup-popup-left").append("<div id=\"div_info\">"+str+"</div>");
+							//alert("xxx");
+						}
+					})
+					//alert("xxx");
+				});
+			});	
+	</script>
+	<style type="text/css">
+	@import url("default.css");
+
+	#test{ color:red;
+		position:fixed;
+		width:100%;
+	}
+	.signup-popup-left {
+		height: 250px;
+		width: 250px;
+	}
+	
+	#login-popup-login-form{
+
+		background:#476;
+		width:100%;
+	}
+	#testbtn{
+	}
+	#div_info{
+		background:#C90;
+		margin-bottom:10px;
+	}
+	#p_ticker{
+		background:#690;
+	}
+    </style>
+	<link href="res/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="res/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	<script src="res/bootstrap/js/bootstrap.js"type="text/javascript"></script>
+</head>
+<body>
+	<div id="test" class="testclass">
+		text
+	</div>
+	<img src="http://passport.ixpub.net/images/noavatar_small.gif" alt="Big Boat">
+	<script type="text/javascript">
+			//alert("sss");
+	</script>
+		<img src="http://passport.ixpub.net/images/noavatar_small.gif" alt="Big Boat">
+	<style type="text/css">
+	.testclass{ background:blue }
+	</style>
+	
+
+	<div class="signup-popup-left">
+		<form id="login-popup-login-form" method="post">
+			<div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="LdblQSWWms1hMRuKawGBfwq3DR6zK431"></div>
+			<!--张俊程 15989641686 690445606-->
+			<div class="simple-form-field clear">
+				<label for="login_popup_email">Email:</label>
+				<input id="login_popup_email" type="email" name="username" minlength="2">
+				<div class="error-display"></div>
+			</div>
+
+			<div class="simple-form-field clear">
+				<label for="login_popup_password">Password:</label>
+				<input id="login_popup_password" type="password" name="password">
+				<div class="error-display"></div>
+			</div>
+
+			<div style="text-align:center; margin-top: 15px;">
+				<input type="button" class="black-button-small" id="login-popup-login-button" value="注册">
+			</div> 
+		</form>
+	</div>
+
+<!--
+<button id="testbtn">Log in</button>
+<p id="p_ticker">This is a paragraph.</p>
+-->	
+</body>
+</html>

@@ -1,0 +1,153 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>test</title>
+	<!--外部加载-->
+    <script src="res/jquery-2.0.3.min.js" type="text/javascript"></script>
+	<script src="link.js"type="text/javascript"></script>
+	<script src="res/bootstrap/js/bootstrap.js"type="text/javascript"></script>
+    <script type="text/javascript">
+			$(document).ready(function(){
+				$("button,#login-popup-login-button").bind("click",function(){
+					//$(".signup-popup-left").append("<div>sdkaaa</div>");
+					$("p").slideToggle();
+					//alert("xxx");
+					//if(0){
+					//var form=$("form")[0];
+					//form.action = "login.php";
+					//form.submit();
+					//}
+					
+					$.ajax({
+						type:'GET',
+						url:"?query",
+						//data:$("form").serialize(),
+						success:function(str){
+							$(".signup-popup-left").append("<div id=\"div_info\">"+str+"</div>");
+							//alert("xxx");
+						}
+					})
+					
+				});
+			});	
+	</script>
+	<style type="text/css">
+	@import url("default.css");
+header{
+	background:#000;
+}
+	#test{ color:red;
+		position:fixed;
+		width:100%;
+	}
+	.signup-popup-left {
+		width: 250px;
+		margin-top:100px;
+	}
+	
+	#login-popup-login-form{
+		background:#476;
+		width:100%;
+	}
+#testbtn{
+}
+#div_info{
+	background:#C90;
+	margin-bottom:10px;
+}
+#p_ticker{
+	background:#690;
+}
+    .href_button {
+	background-color: #999;
+}
+    </style>
+	
+	<link href="res/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="res/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<body>
+	<header class="navbar navbar-inverse navbar-fixed-top">
+
+		<div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">Engru</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="./index.php">Home</a>
+              </li>
+              <li class="">
+                <a href="./getting-started.html">Get started</a>
+              </li>
+              <li class="">
+                <a href="./scaffolding.html">Scaffolding</a>
+              </li>
+              <li class="">
+                <a href="./base-css.html">Base CSS</a>
+              </li>
+              <li class="">
+                <a href="./components.html">Components</a>
+              </li>
+              <li class="">
+                <a href="./javascript.html">JavaScript</a>
+              </li>
+              <li class="">
+                <a href="./customize.html">Customize</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+	</header>
+	
+	<style type="text/css">
+	.testclass{ background:blue }
+	</style>
+	
+
+	<div class="signup-popup-left">
+		张俊程 15989641686 690445606
+	</div>
+
+
+<button id="testbtn">Log in</button>
+<p id="p_ticker">This is a paragraph.</p>	
+
+
+<footer>
+    <div class="container" style="max-width:1170px">
+        <div class="row">
+            <div class="span3">
+                <h5>Product</h5>
+                <a href="http://developers.kippt.com/apps/" target="_blank">App Gallery</a><br>
+                <a href="/pro/">Upgrade to Pro</a><br>
+                <a href="/faq/">Help</a><br>
+                <a href="http://developers.kippt.com/" target="_blank">Developers / API</a>
+            </div>
+            <div class="span3">
+              <h5>About</h5>
+              <a href="/about/">About Kippt</a> <br>
+              <a href="/press/">Press</a> <br>
+              <a href="/privacy/">Privacy</a> <br>
+              <a href="/terms/">Terms</a>
+            </div>
+            <div class="span3">
+              <h5>Community</h5>
+              <a href="http://blog.kippt.com/">Blog</a> <br>
+              <a href="https://twitter.com/kippt/">Twitter</a> <br>
+              <a href="https://facebook.com/kipptapp/">Facebook</a><br>
+              <a href="/about/">Contact Us</a>
+            </div>
+            <div class="span3 lovingly">
+                <p>Handcrafted in San Francisco with Finnish Heritage <span>♥</span></p>
+                <div style="margin-top:10px"><a href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_blue.png" alt="Mobile Analytics"></a></div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

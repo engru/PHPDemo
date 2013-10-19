@@ -33,6 +33,11 @@
             height: 100%;
             background: url(about:blank) repeat;
         }
+        
+        .list_btn{
+            color:#f67919;
+        }
+        
     </style>
     
     {block name="activity-content"}
@@ -40,6 +45,7 @@
             <div class="list_c">
                 <div class="list_img">
                     <img class="nonretina" width="100%" height="400" src="res/images/ropes_A_1840x700_normal.jpg">
+                    <a class="btn list_btn" href="?deal/order/"><span>我要参加</span></a>
                 </div>
 
                 <div id="seq">{$result[n].id}</div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-09-18 17:51:52
+<?php /* Smarty version Smarty-3.1.14, created on 2013-10-07 19:50:50
          compiled from "E:\Web\Demo\Test\theme\templates\content\activity-content.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1204852271332b58fb1-06406513%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b0d00a3a2e81bff9c13ba461f3f6176f7ed34dbf' => 
     array (
       0 => 'E:\\Web\\Demo\\Test\\theme\\templates\\content\\activity-content.tpl',
-      1 => 1378295598,
+      1 => 1379991112,
       2 => 'file',
     ),
     '18125ec67af0a61b2b7d312d9b5ab8dec3209347' => 
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '164b3b1b8f393a3eff1f7a210da36f6db19a285e' => 
     array (
       0 => 'E:\\Web\\Demo\\Test\\theme\\base.tpl',
-      1 => 1378533783,
+      1 => 1381133485,
       2 => 'file',
     ),
     'c92f368df5595777458956753681d346dd7862d3' => 
@@ -105,7 +105,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <?php /*  Call merged included template "./user/user_info.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('./user/user_info.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '1204852271332b58fb1-06406513');
-content_523977b8ea0f07_29787809($_smarty_tpl);
+content_5252a01a172572_13938620($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "./user/user_info.tpl" */?>
                     
                   </div>
@@ -132,7 +132,7 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "./user/user
             <?php /*  Call merged included template "content.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("content.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '1204852271332b58fb1-06406513');
-content_523977b8eeb294_59841432($_smarty_tpl);
+content_5252a01a17e0f5_95212645($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "content.tpl" */?>
          </div>
          <div style="clear:both"></div>
@@ -150,23 +150,23 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "content.tpl
 
 </body>
 </html>
-<?php }} ?><?php /* Smarty version Smarty-3.1.14, created on 2013-09-18 17:51:52
+<?php }} ?><?php /* Smarty version Smarty-3.1.14, created on 2013-10-07 19:50:50
          compiled from "E:\Web\Demo\Test\theme\templates\user\user_info.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_523977b8ea0f07_29787809')) {function content_523977b8ea0f07_29787809($_smarty_tpl) {?><!--
+<?php if ($_valid && !is_callable('content_5252a01a172572_13938620')) {function content_5252a01a172572_13938620($_smarty_tpl) {?><!--
 <div class="user-info">
     <a class="user-info__login" href="#" gaevent="top/login">登录</a>
     <a class="user-info__signup" href="#" gaevent="top/signup">注册</a>
 </div>
---><?php }} ?><?php /* Smarty version Smarty-3.1.14, created on 2013-09-18 17:51:52
+--><?php }} ?><?php /* Smarty version Smarty-3.1.14, created on 2013-10-07 19:50:50
          compiled from "E:\Web\Demo\Test\theme\templates\content.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_523977b8eeb294_59841432')) {function content_523977b8eeb294_59841432($_smarty_tpl) {?><div class="wrapper">
+<?php if ($_valid && !is_callable('content_5252a01a17e0f5_95212645')) {function content_5252a01a17e0f5_95212645($_smarty_tpl) {?><div class="wrapper">
     <div class="row-fluid">
         
             <div id="menu" class="span6">
                 <?php /*  Call merged included template "common/category-nav.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("common/category-nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '1204852271332b58fb1-06406513');
-content_523977b8ef2f93_63410845($_smarty_tpl);
+content_5252a01a19d4f6_58454863($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "common/category-nav.tpl" */?>
                 <ul>
                     <li>list</li>
@@ -203,7 +203,7 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "common/cate
                         <?php /*  Call merged included template "common/listview.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("common/listview.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '1204852271332b58fb1-06406513');
-content_523977b8f35622_63731017($_smarty_tpl);
+content_5252a01a1c8482_91222871($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "common/listview.tpl" */?>
                         
                         <div style="clear:both"></div>
@@ -215,7 +215,7 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "common/list
                     <?php /*  Call merged included template "common/sidebar-nav.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("common/sidebar-nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '1204852271332b58fb1-06406513');
-content_523977b90b28d0_52923369($_smarty_tpl);
+content_5252a01a249322_51810744($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "common/sidebar-nav.tpl" */?>
                     <ul>
                         <li>sidelist</li>
@@ -228,9 +228,9 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "common/side
             
         </div>
       </div>
-</div><?php }} ?><?php /* Smarty version Smarty-3.1.14, created on 2013-09-18 17:51:52
+</div><?php }} ?><?php /* Smarty version Smarty-3.1.14, created on 2013-10-07 19:50:50
          compiled from "E:\Web\Demo\Test\theme\templates\common\category-nav.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_523977b8ef2f93_63410845')) {function content_523977b8ef2f93_63410845($_smarty_tpl) {?><div class="cate-nav">
+<?php if ($_valid && !is_callable('content_5252a01a19d4f6_58454863')) {function content_5252a01a19d4f6_58454863($_smarty_tpl) {?><div class="cate-nav">
     <div class="cate-item">
         <dl>
             <dt id="item_label">☣ 标题</dt>
@@ -259,9 +259,9 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "common/side
 
 
 
-<?php }} ?><?php /* Smarty version Smarty-3.1.14, created on 2013-09-18 17:51:52
+<?php }} ?><?php /* Smarty version Smarty-3.1.14, created on 2013-10-07 19:50:50
          compiled from "E:\Web\Demo\Test\theme\templates\common\listview.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_523977b8f35622_63731017')) {function content_523977b8f35622_63731017($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_5252a01a1c8482_91222871')) {function content_5252a01a1c8482_91222871($_smarty_tpl) {?>
     <style>
         .list_c{
             position: relative;
@@ -294,6 +294,11 @@ $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "common/side
             height: 100%;
             background: url(about:blank) repeat;
         }
+        
+        .list_btn{
+            color:#f67919;
+        }
+        
     </style>
     
     
@@ -324,6 +329,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
             <div class="list_c">
                 <div class="list_img">
                     <img class="nonretina" width="100%" height="400" src="res/images/ropes_A_1840x700_normal.jpg">
+                    <a class="btn list_btn" href="?deal/order/"><span>我要参加</span></a>
                 </div>
 
                 <div id="seq"><?php echo $_smarty_tpl->tpl_vars['result']->value[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['id'];?>
@@ -343,12 +349,12 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
         <?php /*  Call merged included template "./activity-comment.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("./activity-comment.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0, '1204852271332b58fb1-06406513');
-content_523977b9097346_46823372($_smarty_tpl);
+content_5252a01a22dd99_78193565($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); /*  End of included template "./activity-comment.tpl" */?>
     
-<?php }} ?><?php /* Smarty version Smarty-3.1.14, created on 2013-09-18 17:51:53
+<?php }} ?><?php /* Smarty version Smarty-3.1.14, created on 2013-10-07 19:50:50
          compiled from "E:\Web\Demo\Test\theme\templates\content\activity-comment.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_523977b9097346_46823372')) {function content_523977b9097346_46823372($_smarty_tpl) {?><style>
+<?php if ($_valid && !is_callable('content_5252a01a22dd99_78193565')) {function content_5252a01a22dd99_78193565($_smarty_tpl) {?><style>
     .comment_area{
         margin:5px;
         
@@ -442,9 +448,9 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smart
 
         <?php endfor; endif; ?>
     </div>
-</div><?php }} ?><?php /* Smarty version Smarty-3.1.14, created on 2013-09-18 17:51:53
+</div><?php }} ?><?php /* Smarty version Smarty-3.1.14, created on 2013-10-07 19:50:50
          compiled from "E:\Web\Demo\Test\theme\templates\common\sidebar-nav.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_523977b90b28d0_52923369')) {function content_523977b90b28d0_52923369($_smarty_tpl) {?><div class="sidebar-nav">
+<?php if ($_valid && !is_callable('content_5252a01a249322_51810744')) {function content_5252a01a249322_51810744($_smarty_tpl) {?><div class="sidebar-nav">
     <div class="ex-side">
         <a href="">边栏导航</a>
     </div>

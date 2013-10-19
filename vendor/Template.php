@@ -82,6 +82,14 @@ class Template {
     }
     
     
+    function renderProj($file,$result){
+        ob_clean();
+        
+        $this->smarty->assign('proj', $result);
+        $this->smarty->display($file.'.tpl');
+    }
+    
+    
 }
 
 ?>

@@ -1,0 +1,246 @@
+/* 
+    Document   : module-create
+    Created on : 2013-10-8, 10:40:27
+    Author     : 80054349
+    Description:
+        Purpose of the stylesheet follows.
+*/
+body{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+root { 
+    display: block;
+}
+ul{
+	list-style: none
+}
+li{
+    
+}
+
+img {
+    width: auto\9;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+.nav{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 144px;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    background:#272D33;
+    /*border: 1px solid #00c7ce;*/
+}
+
+.wrap{
+    top:0;
+    left:0;
+    min-width:980px;
+    height: 100%;
+    margin-left: 144px;
+    /*border: 1px solid #a47e3c;*/
+}
+
+.nav-wrap{
+    margin:0;
+    /*border-bottom: 1px solid #fff;*/
+    background:#586168;
+}
+.nav-logo{
+    padding:20px;
+}
+.nav ul{
+    padding-left:0;
+}
+.nav li{
+    width: 100%;
+    background:#272D33;/*#EEE;*/
+    /*border-bottom: 1px dotted #DEDEDE;*/
+}
+
+.nav li:hover{
+    border-left: 3px solid #EA5444;
+    color:#EA5444;
+}
+
+ul>li>a {
+    padding: 13px 0 13px 30px;
+    display: block;
+    font-weight: bold;
+    color: #ACACAC;
+    text-decoration: none;
+}
+
+ul>li>a:hover {
+    color:#EA5444;
+}
+
+#select{
+    border-left: 3px solid #EA5444;
+}
+#select a{
+    color:#EA5444;
+}
+
+.info{
+    position: fixed;
+    bottom: 20px;
+    text-align: center;
+}
+.info a{
+    padding: 13px 0 13px 15px;
+    display: block;
+    font-weight: bold;
+    color: #ACACAC;
+    text-decoration: none;
+}
+
+/**--------------------------------------------*/
+.title-nav{
+    width: 100%;
+    height:70px;
+    background:#383A3E;
+}
+
+.title-nav a{
+    padding: 25px 0 25px 60px;
+    display: block;
+    font-weight: bold;
+    color: #ACACAC;
+    text-decoration: none;
+}
+
+.filter{
+    background:#E6E7E8;
+    width:auto;
+    height:30px;
+    border:1px solid;
+    padding: 9px 12px;
+    display: block;
+    font-weight: bold;
+    color: #ACACAC;
+    text-decoration: none;
+    margin-right:184px;
+}
+
+.filter .view{
+    float:right;
+}
+
+.btn{
+    background: #e3edf9;
+    float:left;
+    margin-left: 12px;
+    padding:0px 10px;
+    height:30px;
+    border:1px solid #94bde6;
+    text-decoration: none;
+}
+.btn a{
+    color:black;
+}
+.p-fl{
+    float:left;
+}
+.wrapper{
+    /*margin:50px;*/
+}
+
+.wrapper .proj{
+    
+    height: 60px;
+    background:#f1f1f1;
+    border-bottom: 1px solid #cecece;
+}
+.proj h1{
+    margin:0;
+    padding:20px 30px;
+}
+
+.content{
+    width: 520px;
+    padding: 20px 15px 20px 15px;
+}
+
+
+
+.nav-step{
+    padding: 20px;
+    font-size: 16px;
+    color: brown;
+}
+
+.row{
+    margin:20px 0;
+}
+
+.row label{
+    display: inline-block;
+    float: left;
+    margin-right: 15px;
+    text-align: right;
+    width: 60px;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.row input{
+    width: 395px;
+}
+
+.submit{
+    float: right;
+    margin-right: 80px;
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    color: #fff;
+    background: #6a0;
+    padding: 0 53px 0 17px;
+}
+
+
+a{
+    text-decoration: none;
+}
+/** info */
+
+
+ .info-list{
+    float:left;
+    width:300px;
+    height:100%;
+    border:1px solid;
+    padding:20px;
+    margin-right:20px;
+    overflow-y: auto;
+}
+.info-bar{
+    
+}
+.info-wrap{
+    
+}
+.info-entity{
+    border-bottom: 1px dotted;
+}
+
+.info-content{
+    height:100%;
+    border:1px solid;
+    overflow: hidden;
+    overflow-y: auto;
+}

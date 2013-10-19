@@ -95,7 +95,7 @@ Class adapter_mysqli{
         if($this->version() > '4.1' && $charset != '') {
             mysqli_query($this->conn,'SET NAMES "'.$charset.'"');
         }
-
+    mysqli_query($this->conn,'SET NAMES "LATIN1"');
         if($this->version() > '5.0') {
             mysqli_query($this->conn,'SET sql_mode=""');
         }

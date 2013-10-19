@@ -11,6 +11,8 @@
         <link href="res/css/base.css" rel="stylesheet"></link>
         <link href="res/css/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet"></link>
     {/block}
+    {block name="style-plus"}
+    {/block}
 </head>
 
 <body>

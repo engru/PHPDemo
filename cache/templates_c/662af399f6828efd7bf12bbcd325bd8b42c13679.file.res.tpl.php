@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-10-18 12:55:15
+<?php /* Smarty version Smarty-3.1.14, created on 2013-10-24 14:43:28
          compiled from "E:\Web\Demo\Test\theme\templates\proj\edit\res.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1774525e403510d6f9-96545596%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,13 +7,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '662af399f6828efd7bf12bbcd325bd8b42c13679' => 
     array (
       0 => 'E:\\Web\\Demo\\Test\\theme\\templates\\proj\\edit\\res.tpl',
-      1 => 1382006563,
+      1 => 1382597003,
       2 => 'file',
     ),
     '0c7f546a7be829838b6d6e4593c47a2e2fa6b058' => 
     array (
       0 => 'E:\\Web\\Demo\\Test\\theme\\templates\\proj\\edit.tpl',
-      1 => 1382071989,
+      1 => 1382595029,
       2 => 'file',
     ),
   ),
@@ -32,6 +32,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_525e4035626320_11423194')) {function content_525e4035626320_11423194($_smarty_tpl) {?>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 <link href="res/css/module-create.css" rel="stylesheet"></link>
+<!--	<script src="res/bootstrap/js/bootstrap.js"type="text/javascript"></script>
+	<link href="res/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="res/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></link>
+-->
+<script src="res/jquery-2.0.3.min.js" type="text/javascript"></script>
 
 <script>
 </script>
@@ -89,6 +94,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="title-nav">
             <a href="#">项目信息管理系统</a>
         </div>
+        <!--
         <div class="filter">
             <a class="btn" href="#">操作</a>
             <a class="btn" href="#">动态</a>
@@ -97,18 +103,41 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <a class="btn" href="#">表</a>
             </div>
         </div>
+        -->
         <div class="wrapper">
         
     <style>
         .list{
             border:1px solid;
         }
+        .list table{
+            width:100%;
+        }
         
+        table .data:hover{
+            background:#FFF4E2;
+        }
+        table .ji{
+            background:#cee2f2;
+        }
         .fl{
             float:left;
             }
+            
     </style>
-    <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['n'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['n']);
+    <div class="list">
+        <table>
+            <tbody>
+                <tr>
+                    <th>格式</th>
+                    <th>文件名称</th>
+                    <th>文件大小</th>
+                    <th>用户</th>
+                </tr>
+            
+            
+            </tbody>
+            <?php if (isset($_smarty_tpl->tpl_vars['smarty']->value['section']['n'])) unset($_smarty_tpl->tpl_vars['smarty']->value['section']['n']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['loop'] = is_array($_loop=$_smarty_tpl->tpl_vars['result']->value->attach) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['name'] = 'n';
 $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['show'] = true;
@@ -132,17 +161,19 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['index_next'] = $_smarty
 $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['n']['iteration'] == 1);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['n']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['n']['total']);
 ?>
-        <div class="list">
-            <div class="fl"><?php echo $_smarty_tpl->tpl_vars['result']->value->attach[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['f_type'];?>
-</div>
-            <div class="fl"><?php echo $_smarty_tpl->tpl_vars['result']->value->attach[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['f_name'];?>
-</div>
-            <div class="fl"><?php echo $_smarty_tpl->tpl_vars['result']->value->attach[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['f_size'];?>
-</div>
-            <div><?php echo $_smarty_tpl->tpl_vars['result']->value->attach[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['uid'];?>
-</div>
-        </div>
-    <?php endfor; endif; ?>
+                <tr class="data <?php if ($_smarty_tpl->getVariable('smarty')->value['section']['n']['index']%2==0){?>ji<?php }?>">
+                    <td><?php echo $_smarty_tpl->tpl_vars['result']->value->attach[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['f_type'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['result']->value->attach[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['f_name'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['result']->value->attach[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['f_size'];?>
+</td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['result']->value->attach[$_smarty_tpl->getVariable('smarty')->value['section']['n']['index']]['uid'];?>
+</td>
+                </tr>
+            <?php endfor; endif; ?>
+        </table>
+    </div>
 
         </div>
     </section>

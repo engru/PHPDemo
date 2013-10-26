@@ -34,9 +34,9 @@ class proj_model {
         $this->get_base($id);
         $this->get_intro($id);
         $this->get_attach($id);
-        $this->get_info($id);
+        $this->get_info_list($id);
         $this->get_team($id);
-        $this->get_acti($id);
+        $this->get_acti_list($id);
     }
             
     function get_proj($id){
@@ -64,8 +64,14 @@ class proj_model {
         $this->proj->set_attach($attach);
     }
     
-    function get_info($id){
+    function get_info_list($id){
         $sql = "select * from pre_proj_info where p_id=$id";
+        $info = $this->query($sql);
+        $this->proj->set_info($info);
+    }
+    
+    function get_info($id){
+        $sql = "select * from pre_proj_info where info_id=$id";
         $info = $this->query($sql);
         $this->proj->set_info($info);
     }
@@ -81,9 +87,13 @@ class proj_model {
         $this->query($sql);
     }
     
-
-    
     function get_acti($id){
+        $sql = "select * from pre_proj_acti where a_id=$id";
+        $acti = $this->query($sql);
+        $this->proj->set_acti($acti);
+    }
+    
+    function get_acti_list($id){
         $sql = "select * from pre_proj_acti where p_id=$id";
         $acti = $this->query($sql);
         $this->proj->set_acti($acti);

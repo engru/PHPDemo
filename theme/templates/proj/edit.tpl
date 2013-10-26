@@ -1,7 +1,13 @@
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 <link href="res/css/module-create.css" rel="stylesheet"></link>
-
+<!--	<script src="res/bootstrap/js/bootstrap.js"type="text/javascript"></script>
+	<link href="res/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="res/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></link>
+-->
+<script src="res/jquery-2.0.3.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="vendor/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="vendor/ueditor/ueditor.all.js"></script>
 <script>
 </script>
 <body>

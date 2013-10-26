@@ -14,9 +14,9 @@ class create {
    public function index_action($params='') {
         //转入 注册页面
         $model = load_model('proj_model');
-        //$result = $model->getproj();
+        $model->get_proj($params[0]);
         $templ = new Template();
-        $templ->renderAll('proj/create',$result);
+        $templ->renderAll('proj/create',$model->proj);
     }
      
     public function create_action(){

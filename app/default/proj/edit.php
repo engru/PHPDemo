@@ -75,18 +75,29 @@ class edit {
         $model = load_model('proj_model');
         $model->set_current_app("info");
         $model->get_proj($params[0]);
-        $model->get_info($params[0]);
         $templ = new Template();
-        $templ->renderAll('proj/edit/info',$model->proj);
+        if(is_ajax()){
+            $model->get_info($params[0]);
+            $templ->renderAll('proj/edit/ajax-info',$model->proj);
+        }else{
+            $model->get_info_list($params[0]);
+            $templ->renderAll('proj/edit/info',$model->proj);
+        }
+        
     }
     
     function acti_action($params){
         $model = load_model('proj_model');
         $model->set_current_app("acti");
         $model->get_proj($params[0]);
-        $model->get_acti($params[0]);
         $templ = new Template();
-        $templ->renderAll('proj/edit/acti',$model->proj);
+        if(is_ajax()){
+            $model->get_acti($params[0]);
+            $templ->renderAll('proj/edit/ajax-acti',$model->proj);
+        }else{
+            $model->get_acti_list($params[0]);
+            $templ->renderAll('proj/edit/acti',$model->proj);
+        }
     }
     
     function comment_action($params){

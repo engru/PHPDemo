@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-10-18 12:53:17
+<?php /* Smarty version Smarty-3.1.14, created on 2013-10-24 19:52:45
          compiled from "E:\Web\Demo\Test\theme\templates\proj\edit\base.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:25250525e402a992b29-68055948%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0c7f546a7be829838b6d6e4593c47a2e2fa6b058' => 
     array (
       0 => 'E:\\Web\\Demo\\Test\\theme\\templates\\proj\\edit.tpl',
-      1 => 1382071989,
+      1 => 1382595029,
       2 => 'file',
     ),
   ),
@@ -32,6 +32,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_525e402aa139c1_26770401')) {function content_525e402aa139c1_26770401($_smarty_tpl) {?>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 <link href="res/css/module-create.css" rel="stylesheet"></link>
+<!--	<script src="res/bootstrap/js/bootstrap.js"type="text/javascript"></script>
+	<link href="res/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="res/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"></link>
+-->
+<script src="res/jquery-2.0.3.min.js" type="text/javascript"></script>
 
 <script>
 </script>
@@ -89,6 +94,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="title-nav">
             <a href="#">项目信息管理系统</a>
         </div>
+        <!--
         <div class="filter">
             <a class="btn" href="#">操作</a>
             <a class="btn" href="#">动态</a>
@@ -97,6 +103,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <a class="btn" href="#">表</a>
             </div>
         </div>
+        -->
         <div class="wrapper">
         
     <h1><?php echo $_smarty_tpl->tpl_vars['result']->value->base[0]['detail'];?>

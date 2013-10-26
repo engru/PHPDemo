@@ -11,10 +11,10 @@
                     <a href="javascript:void(0);" class="brand">symkey</a>
                     <div class="nav-collapse collapse" id="nav-collapse-01">
                       <ul class="nav">
-                        <li class=""><a href="#work" class="work">Work</a></li>
+                        <li class=""><a href="?proj/intro/#work" class="work">Work</a></li>
                         <li class=""><a href="#about" class="about">About</a></li>
                         <li class=""><a href="#contact" class="contact">Contact</a></li>
-                        <li><a href="http://www.atfirstsightfilms.com/blog">Blog</a></li>
+                        <li><a href="?activity/alist/">Blog</a></li>
                       </ul> <!-- /nav -->
                     </div><!--/.nav-collapse -->
                     {block name="user_manager"}

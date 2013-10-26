@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2013-10-11 20:47:14
+<?php /* Smarty version Smarty-3.1.14, created on 2013-10-24 20:29:01
          compiled from "E:\Web\Demo\Test\theme\templates\proj\create.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:304505253745f20f180-00549656%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6a42a2d48c574879de31a0ab0d8407e436d038ac' => 
     array (
       0 => 'E:\\Web\\Demo\\Test\\theme\\templates\\proj\\create.tpl',
-      1 => 1381495631,
+      1 => 1381907735,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.14',
   'unifunc' => 'content_5253745f24d994_96030576',
+  'variables' => 
+  array (
+    'result' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5253745f24d994_96030576')) {function content_5253745f24d994_96030576($_smarty_tpl) {?><link href="res/css/module-create.css" rel="stylesheet"></link>
@@ -36,25 +40,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div>
             <ul>
                 <li id="select">
-                    <a href="#">项目信息</a>
+                    <a href="?proj/edit/base?<?php echo $_smarty_tpl->tpl_vars['result']->value->proj[0]['p_id'];?>
+">项目信息</a>
                 </li>
                 <li class="">
-                    <a href="#">项目简介</a>
+                    <a href="?proj/edit/intro?<?php echo $_smarty_tpl->tpl_vars['result']->value->proj[0]['p_id'];?>
+">项目简介</a>
                 </li>
                 <li class="">
-                    <a href="#">团队人员</a>
+                    <a href="?proj/edit/team?<?php echo $_smarty_tpl->tpl_vars['result']->value->proj[0]['p_id'];?>
+">团队人员</a>
                 </li>
                 <li class="">
-                    <a href="#">资源文档</a>
+                    <a href="?proj/edit/res?<?php echo $_smarty_tpl->tpl_vars['result']->value->proj[0]['p_id'];?>
+">资源文档</a>
                 </li>
                 <li class="">
-                    <a href="#">项目资讯动态</a>
+                    <a href="?proj/edit/info?<?php echo $_smarty_tpl->tpl_vars['result']->value->proj[0]['p_id'];?>
+">项目资讯动态</a>
                 </li>
                 <li class="">
-                    <a href="#">活动</a>
+                    <a href="?proj/edit/acti?<?php echo $_smarty_tpl->tpl_vars['result']->value->proj[0]['p_id'];?>
+">活动</a>
                 </li>
                 <li class="">
-                    <a href="#">主要评论</a>
+                    <a href="?proj/edit/comment?<?php echo $_smarty_tpl->tpl_vars['result']->value->proj[0]['p_id'];?>
+">主要评论</a>
                 </li>
                 
             </ul>

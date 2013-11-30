@@ -1,0 +1,20 @@
+/* 
+    Document   : core
+    Created on : 2013-11-25, 19:52:22
+    Author     : 80054349
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+input{
+    width:80%;
+}
+
+.cover_dialog{
+    border:2px solid #2a8d6a;
+}
+

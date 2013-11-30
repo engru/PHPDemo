@@ -23,7 +23,7 @@
     </div>
     <div>
         <div class="info-list">
-            <div class="info-bar">InfoÁÐ±í</div>
+            <div class="info-bar">Infoåˆ—è¡¨</div>
             <div class="info-wrap">
 
                 {section loop=$result->info name=n}

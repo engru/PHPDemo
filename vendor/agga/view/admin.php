@@ -68,18 +68,25 @@ error_reporting(0);
                $(".cover_dialog").slideToggle();//css("display","none");
             });
 			
-			$(".btn-submit").click(function(){
-			        $.ajax({
-						type:"POST",
-						url:"post.php",
-						data:$("form").serialize(),
-						success:function(str){
-								$(".nav-list").append(str);
-						}
-					});
-			});
+            $(".btn-submit").click(function(){
+                    $.ajax({
+                                    type:"POST",
+                                    url:"post.php",
+                                    data:$("form").serialize(),
+                                    success:function(str){
+                                                    $(".nav-list").append(str);
+                                    }
+                            });
+            });
                         
-                        
+            $(".fancybox").fancybox({
+                 openEffect  : 'none',
+                 closeEffect : 'none',
+                 nextEffect  : 'none',
+                 prevEffect  : 'none',
+                 padding     : 0,
+                 margin      : [20, 60, 20, 60] // Increase left/right margin
+             });
 
                         
         });
@@ -96,6 +103,8 @@ error_reporting(0);
         }
     </script>
     <link href="../static/css/core.css" rel="stylesheet">
+    <script type="text/javascript" src="../static/js/jquery.fancybox.js"></script>
+    <link href="../static/css/jquery.fancybox.css" rel="stylesheet">
     
   </head>
 
@@ -152,22 +161,37 @@ error_reporting(0);
   </div>
   <div class="form-group">
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="url_reg" placeholder="文链规则">
+      <input type="text" class="form-control" name="url_reg" placeholder="列表标签">
     </div>
   </div>
   <div class="form-group">
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="title" placeholder="标题标签">
+      <input type="text" class="form-control" name="url_link" placeholder="文链标签">
     </div>
   </div>
   <div class="form-group">
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="attri" placeholder="属性标签">
+      <input type="text" class="form-control" name="url_img" placeholder="配图标签">
     </div>
   </div>
   <div class="form-group">
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="contn" placeholder="内容标签">
+      <input type="text" class="form-control" name="url_intro" placeholder="摘要标签">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="title" placeholder="正文标题标签">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="attri" placeholder="正文属性标签">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="contn" placeholder="正文内容标签">
     </div>
   </div>
   <div class="form-group">
@@ -189,7 +213,9 @@ error_reporting(0);
               <?php
               //$res = getSiteList();
               foreach (getSiteList() as $site){
-                echo '<li class="site-link"><a href="javascript:ajax_request(\'getarticle.php?'.$site[sid].'\')">'.$site[site_name].'</a></li>';
+                echo '<li class="site-link"><a style="float:left" href="javascript:ajax_request(\'test.php?'.$site[sid].'\')">'.$site[site_name].'</a>'
+                        .'<a class="fancybox fancybox.iframe" style="float:right" href="./site-edit.php?'.$site[sid].'">+</a>'
+                        .'<div style="clear:both"></div></li>';
               }
               ?>
             </ul>
@@ -199,28 +225,29 @@ error_reporting(0);
 
             
             
-          <div class="hero-unit">
+          <div class="hero-unit" style="padding:20px">
             <h1>文章列表</h1>
             <p>测试阶段，提供的展示可能不完善，后续会完善.</p>
             <div class="content-list"></div>
           </div>
+           <!--
           <div class="row-fluid">
             <div class="span4">
               <h2>Heading</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
+            </div>
             <div class="span4">
               <h2>Heading</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
+            </div>
             <div class="span4">
               <h2>Heading</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div><!--/span-->
-          </div><!--/row-->
+            </div>
+          </div>-->
         </div><!--/span-->
       </div><!--/row-->
 

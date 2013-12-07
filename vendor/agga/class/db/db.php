@@ -68,18 +68,28 @@ class db {
 	
 	function insert($sql){
 	    if($this->db!=null){
-            $result =  $this->db->query($sql);
-            if($result){
-				return $this->db->insertId();
-			}else{
-				return $result;
-			}
-        }
+                $result =  $this->db->query($sql);
+                if($result){
+                    return $this->db->insertId();
+                }else{
+                    return $result;
+                }
+            }
 
 	}
+/*
+	function update($sql){
+	    if($this->db!=null){
+                $result =  $this->db->query($sql);
+                if($result){
+                    return $this->db->insertId();
+                }else{
+                    return $result;
+                }
+            }
 
-	
-	
+	}
+	*/
 }
 
 ?>

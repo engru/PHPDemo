@@ -22,10 +22,35 @@ if($req==''){
 }else{
 
 echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
+//echo '<link href="http://v2.bootcss.com/assets/css/bootstrap.css" rel="stylesheet">';
 echo '
 <style>
+body{
+    background: #1F76BC;
+}
+
+.img{
+    width:100%;
+}
+
+a{
+    font-family: \'Î¢ÈíÑÅºÚ\',\'hei\',\'ºÚÌå\',Arial, Helvetica,sans-serif;
+    color: #0088cc;
+    text-decoration:none;
+}
+
+a:hover{
+    color: #005580;
+    text-decoration:none;
+}
+
+.container{
+    padding: 20px;
+    margin: 40px;
+    background: #ffffff;
+}
 .title{
-    border-left: 10px solid blue;
+    border-left: 10px solid #006cca;
     padding-left: 20px;
     margin: 20px;
 }
@@ -38,6 +63,8 @@ echo '
     padding-top: 10px;
     margin: 20px;
 }
+
+
 </style>
 ';
     

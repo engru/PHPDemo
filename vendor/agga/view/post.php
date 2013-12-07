@@ -9,18 +9,32 @@ if($_POST){
 	$site[name] = $_POST["site_name"];
 	$site[entry]= $_POST["site_entry"];
 	$site[reg]  = $_POST["url_reg"];
+        $site[link] = $_POST["url_link"];
+        $site[img]  = $_POST["url_img"];
+        $site[intro]= $_POST["url_intro"];
         $site[title]= $_POST["title"];
         $site[attri]= $_POST["attri"];
         $site[contn]= $_POST["contn"];
 
-	$res = addSite($site);
+        $req = $_SERVER['QUERY_STRING'];
+        if($_GET['id']){
+            $res = updateSite($site,$_GET[id]);
+        }else{
+            $res = addSite($site);
+        }
+	
 	
 	if($res){
-		//echo 'ok';
+            //echo 'ok';
+            //var_dump($res);
+            if($_GET['id']){
+                $s = getSite($_GET['id']);
+                //var_dump($s);
+            }else{
 		$s = getSite($res);
-		
+            }
 	}else{
-		//echo "fail";
+		echo "fail";
 	}
 
 }

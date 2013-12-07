@@ -24,12 +24,23 @@ function getSite($id){
 	return query($sql);
 }
 
-function modifySite(){
-    
+function updateSite($site,$id){
+    $sql = "update pre_site set site_name='$site[name]',
+        site_entry = '$site[entry]',
+        url_reg = '$site[reg]',
+        url_link = '$site[link]',
+        url_img = '$site[img]',
+        url_intro = '$site[intro]',
+        arti_title_label = '$site[title]',
+        arti_attri_label = '$site[attri]',
+        arti_contn_label = '$site[contn]' where sid=$id";
+	$res= update($sql);
+        //if($res)
+	return $res;
 }
 
 function addSite($site){
-    $sql = "insert into pre_site (site_name,site_entry,url_reg,arti_title_label,arti_attri_label,arti_contn_label) values ('$site[name]','$site[entry]','$site[reg]','$site[title]','$site[attri]','$site[contn]')";
+    $sql = "insert into pre_site (site_name,site_entry,url_reg,url_link,url_img,url_intro,arti_title_label,arti_attri_label,arti_contn_label) values ('$site[name]','$site[entry]','$site[reg]','$site[link]','$site[img]','$site[intro]','$site[title]','$site[attri]','$site[contn]')";
 	//echo $sql."<br>";
 	$res= insert($sql);
 	return $res;
@@ -67,6 +78,16 @@ function insert($sql=""){
         $db = new db();
         $db->init($sql);
         $rs = $db->insert($sql);
+        return $rs;
+}
+
+function update($sql=""){
+        $db = new db();
+        $db->init($sql);
+        $rs = $db->query($sql);
+        //echo $sql;
+        //$rc = mysql_affected_rows();
+        //echo "Records deleted: " . $rc;
         return $rs;
 }
 

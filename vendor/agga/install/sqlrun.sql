@@ -4,6 +4,10 @@ create table pre_site (
     site_entry varchar(256) NOT NULL,
     p_sid int,
     url_reg varchar(256) NOT NULL,
+    url_link varchar(256) NOT NULL,
+    url_title varchar(256) NOT NULL,
+    url_img varchar(256),
+    url_intro varchar(256),
     arti_title_label varchar(60),
     arti_attri_label varchar(60),
     arti_contn_label varchar(60)

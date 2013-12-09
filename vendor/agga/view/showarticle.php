@@ -23,15 +23,32 @@ if($req==''){
 
 echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
 //echo '<link href="http://v2.bootcss.com/assets/css/bootstrap.css" rel="stylesheet">';
+//echo '<link href="http://v2.bootcss.com/assets/css/bootstrap-responsive.css" rel="stylesheet">';
+echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 echo '
 <style>
-body{
-    background: #1F76BC;
+@media screen and (min-width:600px){
+	body{
+		margin:0px;
+		padding:0px;
+		background: #1F76BC;
+	}
+}
+@media screen and (max-width:600px){
+	body{
+		margin:0px;
+		padding:0px;
+		background: #1F76BC;
+		
+	}
 }
 
-.img{
+
+td,img{
     width:100%;
 }
+
+
 
 a{
     font-family: \'微软雅黑\',\'hei\',\'黑体\',Arial, Helvetica,sans-serif;
@@ -44,11 +61,25 @@ a:hover{
     text-decoration:none;
 }
 
-.container{
-    padding: 20px;
-    margin: 40px;
-    background: #ffffff;
+
+@media screen and (min-width:600px){
+	.container{
+		padding: 20px;
+		margin: 40px;
+		background: #ffffff;
+	}
 }
+@media screen and (max-width:600px){
+	h1,h2,h3,h4{
+		font-size: 18px;
+	}
+	.container{
+		padding: 5px;
+		margin: 10px;
+		background: #ffffff;
+	}
+}
+
 .title{
     border-left: 10px solid #006cca;
     padding-left: 20px;

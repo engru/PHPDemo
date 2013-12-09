@@ -79,12 +79,14 @@ function parserDom($str,$site,$reg,$link,$img,$intro,$req){
         
         echo '<div class="article-item">'
         //找图片
-        .'<div class="item-img"><img src="'.$re->find('img',0)->src.'" width="200px" height="100px"/></div>'
+        .'<div class="item-img"><img src="'.$re->find('img',0)->src.'" width="200px" height="100px"/>'
+        .'<div style="color: #999;font-size: 12px;">来源 '.$site.'</div></div>'
         //标题//链接
-        .'<div class="item-title"><a target="_blank" href="showarticle.php?id='.$req.'&url='.$links.'">'.$re->find($link,0)->plaintext.'</a></div>'
+        .'<div class="item-title"><a target="_blank" href="showarticle.php?id='.$req.'&url='.$links.'">'.$re->find($link,0)->plaintext.'</a>'
          
         //简介
-        .'<div style="color: #999;font-size: 12px;">来源 '.$site.'</div>'
+		.'<div style="color: #777;font-size: 12px;">'.$re->find($intro,0).'</div></div>'
+
         .'<div style="clear:both"></div>'
         .'</div>';
     }

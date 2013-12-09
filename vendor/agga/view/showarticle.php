@@ -34,7 +34,7 @@ body{
 }
 
 a{
-    font-family: \'Î¢ÈíÑÅºÚ\',\'hei\',\'ºÚÌå\',Arial, Helvetica,sans-serif;
+    font-family: \'å¾®è½¯é›…é»‘\',\'hei\',\'é»‘ä½“\',Arial, Helvetica,sans-serif;
     color: #0088cc;
     text-decoration:none;
 }

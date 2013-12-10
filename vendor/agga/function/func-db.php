@@ -58,7 +58,56 @@ function delSite(){
     
 }
 
+/*------------------------------------------------------------------------*/
+function getAllArticle(){
+    $sql = "select * from pre_article ORDER BY aid DESC";
+    return query($sql);
+}
 
+function getArticle($id){
+	$sql = "select * from pre_article where aid=$id";
+	return query($sql);
+}
+
+function getArticleLink($link){
+	$sql = "select * from pre_article where orgin_url='$link'";
+	return query($sql);
+}
+
+function addArticle($article){
+    $sql = "insert into pre_article 
+        (title,sid,thumbnail,intro,orgin_url,attr,content,comment,appendix) 
+ values ('$article[title]','$article[sid]','$article[thumbnail]','$article[intro]','$article[link]','$article[attr]','$article[contn]','','')";
+
+//    $sql = "insert into pre_article 
+//        (title,sid,thumbnail,orgin_url,attr,content,comment,appendix) 
+// values ('$article[title]','$article[sid]','$article[thumbnail]','$article[link]','$article[attr]','$article[contn]','','')";
+
+
+//echo $sql."<br>";
+	$res= insert($sql);
+	return $res;
+	/*
+	if($res){
+		echo "ok".$res;
+		return $res;
+	}else{
+		echo "fff";
+		return $res;
+	}*/
+}
+
+function updateArticle(){
+    
+}
+
+function delArticle(){
+    
+}
+
+
+
+/*------------------------------------------------------------------------*/
 function query($sql=""){
         $db = new db();
         $db->init($sql);

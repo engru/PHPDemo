@@ -88,7 +88,13 @@ error_reporting(0);
                  margin      : [20, 60, 20, 60] // Increase left/right margin
              });
 
-                        
+           $.ajax({
+                type:"GET",
+                url:"getcrawl.php",
+                success:function(str){
+                    $(".content-list").replaceWith(str);
+                }
+          });      
         });
         
         function ajax_request(url){

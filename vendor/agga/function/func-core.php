@@ -29,13 +29,13 @@ function geturl($url){
     curl_close($ch);
 
     //the callback function used to retreive the header info
-    function readHeader($ch, $string) {
-        $length = strlen($string);
-        //only display the headers with content
-        if (trim($string) != '')
-            echo "<center>Header: $string</center><br />\n";
-        return $length;
-    }
+    //function readHeader($ch, $string) {
+    //    $length = strlen($string);
+    //    //only display the headers with content
+   //     if (trim($string) != '')
+   //         echo "<center>Header: $string</center><br />\n";
+   //     return $length;
+   // }
 
     //echo "<br /><center><b><u>BELOW this line is the content fetched from www.example.com:</u></b></center><br />";
     return $output;

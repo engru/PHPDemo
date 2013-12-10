@@ -14,12 +14,10 @@ error_reporting(0);
 $req = $_SERVER['QUERY_STRING'];
 $id = $_GET['id'];
 $url= $_GET['url'];
+$local=$_GET['local'];
 
 $res = getSite($id);
 
-if($req==''){
-    ;
-}else{
 
 echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
 //echo '<link href="http://v2.bootcss.com/assets/css/bootstrap.css" rel="stylesheet">';
@@ -32,6 +30,7 @@ echo '
 		margin:0px;
 		padding:0px;
 		background: #1F76BC;
+		font-family: \'微软雅黑\',\'hei\',\'黑体\',Arial, Helvetica,sans-serif;
 	}
 }
 @media screen and (max-width:600px){
@@ -39,14 +38,14 @@ echo '
 		margin:0px;
 		padding:0px;
 		background: #1F76BC;
-		
+		font-family: \'微软雅黑\',\'hei\',\'黑体\',Arial, Helvetica,sans-serif;
 	}
 }
 
 
 td,img{
     width:100%;
-	height: 100%;
+	height: auto;
 }
 
 
@@ -99,9 +98,22 @@ a:hover{
 
 </style>
 ';
+  
+
+
+if($local){
+    $article = getArticle($url);
+    //var_dump($article);
+    echo '<div class="container">';
+    echo '<div class="title"><h1>'.$article[0][title].'<h1></div>';
     
+    //echo $html->find($res[arti_attri_label],0);
+    echo '<div class="meta">'.$res[0][site_name].'</div>';
     
-    
+    echo '<div class="content">'.$article[0][content].'</div>';
+    echo '</div>';
+}else{
+
     parserContent(geturl($url),$res[0]);//"http://www.36kr.com/p/207843.html"));
 }
 

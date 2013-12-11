@@ -64,6 +64,14 @@ function getAllArticle(){
     return query($sql);
 }
 
+function getPageArticle($page){
+    $begin = $page*20;
+    $end = 20;
+    $sql = "select * from pre_article ORDER BY aid DESC limit $begin,$end";
+    //echo $sql;
+    return query($sql);
+}
+
 function getArticle($id){
 	$sql = "select * from pre_article where aid=$id";
 	return query($sql);

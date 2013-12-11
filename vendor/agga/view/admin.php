@@ -90,7 +90,7 @@ error_reporting(0);
 
            $.ajax({
                 type:"GET",
-                url:"getcrawl.php",
+                url:"getcrawl.php?page=0",
                 success:function(str){
                     $(".content-list").replaceWith(str);
                 }
@@ -107,6 +107,19 @@ error_reporting(0);
                     }
                 });
         }
+        
+        function ajax_page(url){
+                //alert(url);
+                $.ajax({
+                    type:"GET",
+                    url:url,
+                    success:function(str){
+                        $(".read_more").remove();
+                        $(".content-list").append(str);
+                    }
+                });
+        }
+        
     </script>
     <link href="../static/css/core.css" rel="stylesheet">
     <script type="text/javascript" src="../static/js/jquery.fancybox.js"></script>

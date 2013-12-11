@@ -10,8 +10,8 @@ require '../function/func-core.php';
 error_reporting(0);
 
 //读取列表
-
-
+$page = $_GET["page"];
+//echo 'page:'.$page;
 
 
 echo '<div class="content-list">';
@@ -95,7 +95,15 @@ echo '
     
 echo '<div class="contains">';
 //$res = getSiteList();
-foreach (getAllArticle() as $article){
+
+if($page+1){
+    $articles = getPageArticle($page);
+}else{
+    
+    $articles = getAllArticle();
+}
+
+foreach ($articles as $article){
     //echo '======================'.'<br>';
     //flushState();
    // parselink($site);
@@ -118,6 +126,16 @@ foreach (getAllArticle() as $article){
 }
 echo '</div>';
 
+if($page+1){
+    //查阅更多
+    //$articles = getPageArticle($page);
+    echo '<div class="read_more"><a href="javascript:ajax_page(\'getcrawl.php?page='.($page+1).'\')">查阅更多</a></div>';
+}else{
+    //$articles = getAllArticle();
+}
+
+
+/*
 function flushState(){
     ob_flush();
     flush();
@@ -203,7 +221,7 @@ function dbstore($web){
         flushState();
     }
 }
-
+*/
 
 
 ?>

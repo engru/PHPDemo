@@ -86,7 +86,9 @@ function parselink($site){
                 $web[title] = $re->find($site[url_link],0)->plaintext;
                 $web[link] = $links;
                 $web[sid] = $site[sid];
-                $web[intro] = $re->find($site[url_intro],0);
+                //$web[intro] = $re->find($site[url_intro],0);
+                $web[intro] = str_replace('\'', '\\\'', $re->find($site[url_intro],0));
+                
                 $web[thumbnail] = $re->find('img',0)->src;
 
                 $web[attr] = $site[site_name];//$attr;

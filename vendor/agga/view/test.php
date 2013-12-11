@@ -9,7 +9,7 @@ require '../function/func-db.php';
 require '../class/db/db.php';
 require '../function/func-core.php';
 error_reporting(0);
-
+set_time_limit(100);
 $req = $_SERVER['QUERY_STRING'];
 
 $res = getSite($req);

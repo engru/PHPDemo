@@ -49,6 +49,7 @@ function parselink($site){
 
     require_once '../class/HtmlParserModel.php';
     require_once '../class/simplehtmldom_1_5/simple_html_dom.php';
+
     $html = str_get_html($str);
     $blog = $html->find($site[url_reg]);
     foreach ($blog as $res){
@@ -58,17 +59,20 @@ function parselink($site){
         flushState();
         //------------------------
         $re = str_get_html($res);
-        $links = 't'.$re->find($site[url_link],0)->href;
-        if($re->find($site[url_link],0)->href){
+        $bloglink = $re->find($site[url_link],0)->href; //博文链接
+        $links = 't'.$bloglink;     //中介
+        if($bloglink){
         
             $sites = explode("/",$site[site_entry]);
 
-            $site_domain = $sites[0].'//'.$sites[1].$sites[2].'/';
+            $site_domain = $sites[0].'//'.$sites[1].$sites[2].'/';  //站点域名
             //var_dump($site);
-            if(strpos($links,$site_domain)!=1){
-                $links = $site_domain.$re->find($site[url_link],0)->href;
+            if(strpos($links,$site_domain)==1){     //博文链接与站点域名匹配
+                $links = $bloglink;
+            }else if(stripos($links,'http')==1){    //非同一域名完整链接
+                $links = $bloglink;
             }else{
-                $links = $re->find($site[url_link],0)->href;
+                $links = $site_domain.$bloglink;
             }
             //------------------------
             echo '链接：'.$links.'|'.$site_domain.'<br>';
@@ -93,8 +97,12 @@ function parselink($site){
 
                 $web[attr] = $site[site_name];//$attr;
                 $web[contn] = getcontn($links,$site[arti_contn_label]);
-
-                dbstore($web);
+                if($web[contn]){
+                    dbstore($web);
+                }else{
+                    echo '内容为空';
+                    flushState();
+                }
             }
         }
     }
@@ -110,7 +118,7 @@ function getcontn($url,$contn){
     echo '获取内容...'.'<br>';
     flushState();
     $content = crawl($url);
-    
+    $content = str_replace('\\', '', $content);
     $html = str_get_html($content);
     
     return str_replace('\'', '\\\'', $html->find($contn,0));

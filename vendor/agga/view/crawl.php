@@ -7,7 +7,7 @@
 require '../function/func-db.php';
 require '../class/db/db.php';
 require '../function/func-core.php';
-error_reporting(-10);
+error_reporting(-9);
 /*E_ALL：-1
 E_ERROR:1
 E_WARNING:2
@@ -100,7 +100,7 @@ function parselink($site){
                 if($web[contn]){
                     dbstore($web);
                 }else{
-                    echo '内容为空';
+                    echo '内容为空'.'<br>';
                     flushState();
                 }
             }
@@ -118,10 +118,12 @@ function getcontn($url,$contn){
     echo '获取内容...'.'<br>';
     flushState();
     $content = crawl($url);
-    $content = str_replace('\\', '', $content);
-    $html = str_get_html($content);
-    
-    return str_replace('\'', '\\\'', $html->find($contn,0));
+    if($content){
+        $content = str_replace('\\', '', $content);
+        $html = str_get_html($content);
+
+        return str_replace('\'', '\\\'', $html->find($contn,0));
+    }
 }
 
 //数据存库

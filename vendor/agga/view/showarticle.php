@@ -85,6 +85,10 @@ a:hover{
             width:80%;
             height: auto;
         }
+        iframe {
+            text-align: center;
+            width: 100%;
+        }
 
 }
 @media screen and (max-width:600px){
@@ -101,6 +105,11 @@ a:hover{
             margin: 0 auto;
             width:95%;
             height: auto;
+        }
+        iframe {
+            display:none;
+            width: 100%;
+            height:auto;
         }
 }
 

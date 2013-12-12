@@ -76,6 +76,9 @@ echo '
 		padding-top: 10px;
 		margin: 20px;*/
 	}
+        .hero-unit {
+            padding: 20px;
+        }
 }
 
 @media screen and (max-width:600px){
@@ -95,6 +98,9 @@ echo '
 		padding-top: 10px;
 		margin: 20px;*/
 	}
+        .hero-unit {
+            padding: 0px;
+        }
 }
 
 

@@ -24,6 +24,15 @@ echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
 //echo '<link href="http://v2.bootcss.com/assets/css/bootstrap-responsive.css" rel="stylesheet">';
 echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
 echo '
+<script type="text/javascript" src="http://www.w3school.com.cn/jquery/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("img").removeAttr("style");
+        });
+    </script>
+';
+
+echo '
 <style>
 @media screen and (min-width:600px){
 	body{
@@ -43,10 +52,7 @@ echo '
 }
 
 
-td,img{
-    width:100%;
-	height: auto;
-}
+
 
 
 
@@ -68,6 +74,18 @@ a:hover{
 		margin: 40px;
 		background: #ffffff;
 	}
+        
+        td{
+            width:auto;
+            height: auto;
+        }
+        img{
+            display:block;
+            margin:0 auto;
+            width:80%;
+            height: auto;
+        }
+
 }
 @media screen and (max-width:600px){
 	h1,h2,h3,h4{
@@ -78,6 +96,12 @@ a:hover{
 		margin: 10px;
 		background: #ffffff;
 	}
+        td,img{
+            padding:0px;
+            margin: 0 auto;
+            width:95%;
+            height: auto;
+        }
 }
 
 .title{

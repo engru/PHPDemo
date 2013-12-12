@@ -13,7 +13,7 @@ error_reporting(0);
 $page = $_GET["page"];
 //echo 'page:'.$page;
 
-
+  if($page+1==1){  
 echo '<div class="content-list">';
 echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
 echo '
@@ -23,13 +23,6 @@ echo '
 }
 .contains{
     
-}
-
-.hero-unit {
-	font-size: 16px;
-	font-weight: 200;
-	line-height: 25px;
-	color: inherit;
 }
 
 .article-item{
@@ -88,19 +81,32 @@ echo '
 		margin: 20px;*/
 	}
 }
-
+.read_more {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background-color: #666;
+    text-align: center;
+    display: block;
+    color: #fff;
+    margin-top: 10px;
+}
 
 </style>
 ';
-    
-echo '<div class="contains">';
-//$res = getSiteList();
+  }
+    echo '<div class="contains">';
+    //$res = getSiteList();
 
 if($page+1){
     $articles = getPageArticle($page);
 }else{
     
     $articles = getAllArticle();
+}
+
+if(!$article[thumbnail]){
+    $article[thumbnail] = '../static/pic.png';
 }
 
 foreach ($articles as $article){
@@ -121,17 +127,16 @@ foreach ($articles as $article){
 		.'<div style="color: #777;font-size: 12px;">'.$article[intro].'</div></div>'
 
         .'<div style="clear:both"></div>'
-        .'</div>';
+        .'</div>';  //end: article-item
     
 }
-echo '</div>';
+
+    echo '</div>';  //end:contains
 
 if($page+1){
     //查阅更多
-    //$articles = getPageArticle($page);
     echo '<div class="read_more"><a href="javascript:ajax_page(\'getcrawl.php?page='.($page+1).'\')">查阅更多</a></div>';
 }else{
-    //$articles = getAllArticle();
 }
 
 

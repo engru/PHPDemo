@@ -46,6 +46,25 @@ error_reporting(0);
           width:40px;
           height:40px;
       }
+      
+        .hero-unit {
+                font-size: 16px;
+                font-weight: 200;
+                line-height: 25px;
+                color: inherit;
+        }
+
+        @media screen and (min-width:600px){
+                .hero-unit {
+                    padding: 20px;
+                }
+        }
+
+        @media screen and (max-width:600px){
+                .hero-unit {
+                    padding: 0px;
+                }
+        }
     </style>
     <link href="http://v2.bootcss.com/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -114,8 +133,9 @@ error_reporting(0);
                     type:"GET",
                     url:url,
                     success:function(str){
-                        $(".read_more").remove();
-                        $(".content-list").append(str);
+                        //$(".read_more").remove();
+                        //$(".content-list").append(str);
+                        $(".read_more").replaceWith(str);
                     }
                 });
         }
@@ -244,7 +264,7 @@ error_reporting(0);
 
             
             
-          <div class="hero-unit" style="padding:20px">
+          <div class="hero-unit">
             <h1>文章列表</h1>
             <p>测试阶段，提供的展示可能不完善，后续会完善.</p>
             <div class="content-list"></div>

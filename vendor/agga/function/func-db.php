@@ -84,8 +84,8 @@ function getArticleLink($link){
 
 function addArticle($article){
     $sql = "insert into pre_article 
-        (title,sid,thumbnail,intro,orgin_url,attr,content,comment,appendix) 
- values ('$article[title]','$article[sid]','$article[thumbnail]','$article[intro]','$article[link]','$article[attr]','$article[contn]','','')";
+        (title,sid,thumbnail,intro,orgin_url,attr,content,comment,appendix,date) 
+ values ('$article[title]','$article[sid]','$article[thumbnail]','$article[intro]','$article[link]','$article[attr]','$article[contn]','','',$article[date])";
 
 //    $sql = "insert into pre_article 
 //        (title,sid,thumbnail,orgin_url,attr,content,comment,appendix) 

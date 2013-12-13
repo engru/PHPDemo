@@ -94,7 +94,7 @@ function parselink($site){
                 $web[intro] = str_replace('\'', '\\\'', $re->find($site[url_intro],0));
                 
                 $web[thumbnail] = $re->find('img',0)->src;
-
+                $web[date] = time();
                 $web[attr] = $site[site_name];//$attr;
                 $web[contn] = getcontn($links,$site[arti_contn_label]);
                 if($web[contn]){

@@ -141,7 +141,7 @@ if($local){
     echo '<div class="title"><h1>'.$article[0][title].'<h1></div>';
     
     //echo $html->find($res[arti_attri_label],0);
-    echo '<div class="meta">'.$res[0][site_name].'</div>';
+    echo '<div class="meta">'.$res[0][site_name].'  '.date('Y-m-d H:i', $article[0][date]).'</div>';
     
     echo '<div class="content">'.$article[0][content].'</div>';
     echo '</div>';

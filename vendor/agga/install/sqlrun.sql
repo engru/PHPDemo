@@ -18,6 +18,7 @@ create table pre_article (
     attr varchar(60),
     title varchar(100) NOT NULL,
     content text,
+
     orgin_url varchar(200),
     sid int,
     intro text,
@@ -31,6 +32,12 @@ create table pre_user (
     username varchar(32) NOT NULL,
     password varchar(32) NOT NULL,
 )default charset=utf8;
+
+create table pre_subs (
+    su_id int NOT NULL auto_increment PRIMARY KEY,
+    uid int,
+    sid int
+}default charset=utf8;
 
 //我的收藏、喜欢、分享、评论、社交、踩赞
 //所属组别

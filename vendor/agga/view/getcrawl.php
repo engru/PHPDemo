@@ -119,7 +119,7 @@ foreach ($articles as $article){
         echo '<div class="article-item">'
         //找图片
         .'<div class="item-img"><img src="'.$article[thumbnail].'" width="200px" height="100px"/>'
-        .'<div style="color: #999;font-size: 12px;">来源 '.$article[attr].'</div></div>'
+        .'<div style="color: #999;font-size: 12px;">来源 '.$article[attr].' '.date('Y-m-d H:i', $article[date]).'</div></div>'
         //标题//链接
         .'<div class="item-title"><a target="_blank" href="showarticle.php?id='.$article[sid].'&url='.$article[aid].'&local=y">'.$article[title].'</a>'
          

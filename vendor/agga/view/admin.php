@@ -7,7 +7,8 @@
 
 require '../function/func-db.php';
 require '../class/db/db.php';
-error_reporting(0);
+require '../function/func-user.php';
+error_reporting(-9);
 
 ?>
 
@@ -64,6 +65,21 @@ error_reporting(0);
                 .hero-unit {
                     padding: 0px;
                 }
+        }
+        
+        .h2-title {
+            line-height: 38px;
+            border-bottom: 1px solid #0088cc;
+            position: relative;
+            top: -3px;
+            color: #0088cc;
+            font-size: 26px;
+        }
+        .h2-title strong{
+            margin:0;
+            border-bottom: 3px solid #0088cc;
+            line-height: 38px;
+            display: inline-block;
         }
     </style>
     <link href="http://v2.bootcss.com/assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -161,7 +177,13 @@ error_reporting(0);
           <a class="brand" href="#">Crawl</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
+              <?php if(islogin()){?>
               Logged in as <a href="#" class="navbar-link">Username</a>
+              <?php }else{?>
+              <a class="fancybox fancybox.iframe navbar-link" href="./user/user.php?action=login">登录</a>
+              <strong>/</strong>
+              <a class="fancybox fancybox.iframe navbar-link" href="./user/user.php?action=register">注册</a>
+              <?php }?>
             </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -251,10 +273,18 @@ error_reporting(0);
               
               <?php
               //$res = getSiteList();
-              foreach (getSiteList() as $site){
-                echo '<li class="site-link"><a style="float:left" href="javascript:ajax_request(\'test.php?'.$site[sid].'\')">'.$site[site_name].'</a>'
-                        .'<a class="fancybox fancybox.iframe" style="float:right" href="./site-edit.php?'.$site[sid].'">+</a>'
-                        .'<div style="clear:both"></div></li>';
+              if(islogin()){
+                foreach (getSubsList() as $site){
+                  echo '<li class="site-link"><a style="float:left" href="javascript:ajax_request(\'test.php?'.$site[sid].'\')">'.$site[site_name].'</a>'
+                          .'<a class="fancybox fancybox.iframe" style="float:right" href="./site-edit.php?'.$site[sid].'">+</a>'
+                          .'<div style="clear:both"></div></li>';
+                }
+              }else{
+                foreach (getSiteList() as $site){
+                  echo '<li class="site-link"><a style="float:left" href="javascript:ajax_request(\'test.php?'.$site[sid].'\')">'.$site[site_name].'</a>'
+                          .'<a class="fancybox fancybox.iframe" style="float:right" href="./site-edit.php?'.$site[sid].'">+</a>'
+                          .'<div style="clear:both"></div></li>';
+                }
               }
               ?>
             </ul>
@@ -265,7 +295,7 @@ error_reporting(0);
             
             
           <div class="hero-unit">
-            <h1>文章列表</h1>
+            <h2 class="h2-title"><strong>文章列表</strong></h2>
             <p>测试阶段，提供的展示可能不完善，后续会完善.</p>
             <div class="content-list"></div>
           </div>

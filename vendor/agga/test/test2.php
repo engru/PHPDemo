@@ -28,8 +28,8 @@
 	echo '<br>';
 $timestamp = time();
 $datetime = date('Y-m-d H:i:s', $timestamp);
-echo "该时间戳代表的时间：", $datetime, "<br>\n";
-echo "从此时间重新转回时间戳：", strtotime($datetime), "<br>\n";
+echo "璇ユ椂闂存埑浠ｈ〃鐨勬椂闂达細", $datetime, "<br>\n";
+echo "浠庢鏃堕棿閲嶆柊杞洖鏃堕棿鎴筹細", strtotime($datetime), "<br>\n";
 var_dump($datetime);
 $timess="1213112510";
 
@@ -39,7 +39,7 @@ echo intval($timess).'<br>';
 echo strtotime((int)$timess).'<br>';
 $tim = $timess+0;
 var_dump($tim);
-echo "从此时间重新转回时间戳：". strtotime($tim). "<br>\n";
+echo "浠庢鏃堕棿閲嶆柊杞洖鏃堕棿鎴筹細". strtotime($tim). "<br>\n";
 	
 
 

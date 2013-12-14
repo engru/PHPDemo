@@ -30,14 +30,14 @@ create table pre_article (
 create table pre_user (
     uid int NOT NULL auto_increment PRIMARY KEY,
     username varchar(32) NOT NULL,
-    password varchar(32) NOT NULL,
+    password varchar(32) NOT NULL
 )default charset=utf8;
 
 create table pre_subs (
     su_id int NOT NULL auto_increment PRIMARY KEY,
     uid int,
     sid int
-}default charset=utf8;
+)default charset=utf8;
 
 //我的收藏、喜欢、分享、评论、社交、踩赞
 //所属组别

@@ -1,0 +1,21 @@
+/* 
+    Document   : user
+    Created on : 2013-12-13, 19:03:46
+    Author     : 80054349
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.form-horizontal .control-label{
+    float: left;
+    width: 100px;
+    padding-top: 5px;
+    text-align: right;
+}
+
+
+

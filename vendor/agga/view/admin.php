@@ -9,7 +9,7 @@ require '../function/func-db.php';
 require '../class/db/db.php';
 require '../function/func-user.php';
 error_reporting(-9);
-
+$islogin = islogin();
 ?>
 
 <!DOCTYPE html>
@@ -120,7 +120,7 @@ error_reporting(-9);
                  nextEffect  : 'none',
                  prevEffect  : 'none',
                  padding     : 0,
-                 margin      : [20, 60, 20, 60] // Increase left/right margin
+                 margin      : [40, 120, 40, 120] // Increase left/right margin
              });
 
            $.ajax({
@@ -177,8 +177,9 @@ error_reporting(-9);
           <a class="brand" href="#">Crawl</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              <?php if(islogin()){?>
-              Logged in as <a href="#" class="navbar-link">Username</a>
+              <?php if($islogin){?>
+              <a href="#" class="navbar-link">Username</a>
+              <a href="./user/user.php?action=logout" class="navbar-link">退出</a>
               <?php }else{?>
               <a class="fancybox fancybox.iframe navbar-link" href="./user/user.php?action=login">登录</a>
               <strong>/</strong>
@@ -200,8 +201,12 @@ error_reporting(-9);
         <div class="span3">
             
         <div class="well">
+<?php if($islogin){?>
+            <a type="button" href="./user/subs.php" class="btn btn-success fancybox fancybox.iframe">添加订阅</a>
+<?php }else{ ?>
             <button type="button" class="btn btn-success">添加站点</button>
-            
+
+
 <div class="tizi_fb_nr tizi_fb_nr_border cover_dialog" id="tizi_fb_nr" style="top: 60px; display: none;">
     	<div class="panel panel-primary">
             <div class="panel-heading">
@@ -262,8 +267,11 @@ error_reporting(-9);
   </div>
 </form>
 </div>
-            
+<?php } ?>   
         </div>
+  
+            
+            
             
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
@@ -273,16 +281,21 @@ error_reporting(-9);
               
               <?php
               //$res = getSiteList();
-              if(islogin()){
-                foreach (getSubsList() as $site){
-                  echo '<li class="site-link"><a style="float:left" href="javascript:ajax_request(\'test.php?'.$site[sid].'\')">'.$site[site_name].'</a>'
-                          .'<a class="fancybox fancybox.iframe" style="float:right" href="./site-edit.php?'.$site[sid].'">+</a>'
-                          .'<div style="clear:both"></div></li>';
-                }
+              
+              if($islogin){
+                $r = getSubsLists($islogin);
+                if($r)
+                    foreach ($r as $site){
+                        //var_dump($site);
+                    //echo $site[0][site_name];
+                      echo '<li class="site-link"><a style="float:left" href="javascript:ajax_request(\'test.php?'.$site[0]['sid'].'\')">'.$site[0][site_name].'</a>'
+                             // .'<a class="fancybox fancybox.iframe" style="float:right" href="./site-edit.php?'.$site[sid].'">+</a>'
+                              .'<div style="clear:both"></div></li>';
+                    }
               }else{
                 foreach (getSiteList() as $site){
-                  echo '<li class="site-link"><a style="float:left" href="javascript:ajax_request(\'test.php?'.$site[sid].'\')">'.$site[site_name].'</a>'
-                          .'<a class="fancybox fancybox.iframe" style="float:right" href="./site-edit.php?'.$site[sid].'">+</a>'
+                  echo '<li class="site-link"><a style="float:left" href="javascript:ajax_request(\'test.php?'.$site['sid'].'\')">'.$site['site_name'].'</a>'
+                          .'<a class="fancybox fancybox.iframe" style="float:right" href="./site-edit.php?'.$site['sid'].'">+</a>'
                           .'<div style="clear:both"></div></li>';
                 }
               }

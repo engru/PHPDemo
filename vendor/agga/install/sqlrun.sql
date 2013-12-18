@@ -40,4 +40,11 @@ create table pre_subs (
 )default charset=utf8;
 
 //我的收藏、喜欢、分享、评论、社交、踩赞
+create table pre_favor (
+    su_id int NOT NULL auto_increment PRIMARY KEY,
+    uid int,
+    aid int
+)default charset=utf8;
+
+
 //所属组别

@@ -105,6 +105,23 @@ function getSubsLists($uid){
 }
 /**---------------------------------------------------------------**/
 //收藏列表
+function getFavorList($uid){
+    $sql = "select * from pre_favor a,pre_article b where a.aid=b.aid and a.uid=$uid ORDER BY su_id DESC";
+    return query($sql);
+}
+
+function getFavorite($uid,$aid){
+    $sql = "select * from pre_favor where uid=$uid and aid=$aid";
+    return query($sql);
+}
+
+function addFavorite($uid,$aid){
+    $sql = "insert into pre_favor (uid,aid) values ($uid,$aid)";
+    $res= insert($sql);
+    return $res;
+}
+
+
 
 /**---------------------------------------------------------------**/
 //喜欢

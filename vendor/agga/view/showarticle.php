@@ -8,9 +8,10 @@
 require '../function/func-db.php';
 require '../class/db/db.php';
 require '../function/func-core.php';
+require '../function/func-user.php';
 error_reporting(0);
 
-
+$islogin = islogin();
 $req = $_SERVER['QUERY_STRING'];
 $id = $_GET['id'];
 $url= $_GET['url'];
@@ -29,6 +30,17 @@ echo '
         $(document).ready(function(){
             $("img").removeAttr("style");
         });
+
+        function ajax_request(url){
+            $.ajax({
+                type:"GET",
+                url:url,
+                success:function(str){
+                    //$(".site-subs[id="+sid+"]").replaceWith(str);
+                    alert(str);
+                }
+            });
+        }
     </script>
 ';
 
@@ -141,7 +153,18 @@ if($local){
     echo '<div class="title"><h1>'.$article[0][title].'<h1></div>';
     
     //echo $html->find($res[arti_attri_label],0);
-    echo '<div class="meta">'.$res[0][site_name].'  '.date('Y-m-d H:i', $article[0][date]).'</div>';
+    echo '<div class="meta">'.$res[0][site_name].'  '.date('Y-m-d H:i', $article[0][date]);//'.'</div>';
+    if($islogin){
+    $fav = getFavorite($islogin,$article[0][aid]);
+    //var_dump($fav);
+    if($fav==''){
+        echo '  <a href="javascript:ajax_request(\'./user/favorite.php?action=addfavor&aid='.$article[0][aid].'\')">收藏</a>';
+    }else{
+        echo '  <a href="javascript:ajax_request(\'./user/favorite.php?action=delfavor&aid='.$article[0][aid].'\')">已收藏</a>';
+    }
+    }
+    echo '</div>';
+
     
     echo '<div class="content">'.$article[0][content].'</div>';
     echo '</div>';

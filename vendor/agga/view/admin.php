@@ -31,12 +31,17 @@ $islogin = islogin();
         padding: 9px 0;
       }
 
-      @media (max-width: 980px) {
+      @media screen and (max-width: 980px) {
         /* Enable use of floated navbar text */
         .navbar-text.pull-right {
           float: none;
           padding-left: 5px;
           padding-right: 5px;
+        }
+        
+        #nav-collapse{
+            height:auto;
+            display:none;
         }
       }
       
@@ -82,6 +87,7 @@ $islogin = islogin();
             display: inline-block;
         }
     </style>
+
     <link href="http://v2.bootcss.com/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -102,6 +108,10 @@ $islogin = islogin();
             $(".btn-success").click(function(){
                $(".cover_dialog").slideToggle();//css("display","none");
             });
+            
+            $(".btn-navbar").click(function(){
+                $(".nav-collapse").slideToggle();//css("height","auto");
+            });
 			
             $(".btn-submit").click(function(){
                     $.ajax({
@@ -120,7 +130,7 @@ $islogin = islogin();
                  nextEffect  : 'none',
                  prevEffect  : 'none',
                  padding     : 0,
-                 margin      : [40, 120, 40, 120] // Increase left/right margin
+                 margin      : [20, 60, 20, 60] // Increase left/right margin
              });
 
            $.ajax({
@@ -175,10 +185,10 @@ $islogin = islogin();
           </button>
           <a class="brand1" href="#"></a>
           <a class="brand" href="#">Crawl</a>
-          <div class="nav-collapse collapse">
+          <div class="nav-collapse collapse" id="nav-collapse">
             <p class="navbar-text pull-right">
               <?php if($islogin){?>
-              <a href="#" class="navbar-link">Username</a>
+              <a href="#" class="navbar-link"><?php echo $_SESSION['userid'][0][username] ?></a>
               <a href="./user/user.php?action=logout" class="navbar-link">退出</a>
               <?php }else{?>
               <a class="fancybox fancybox.iframe navbar-link" href="./user/user.php?action=login">登录</a>
@@ -190,6 +200,9 @@ $islogin = islogin();
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
+              <?php if($islogin){
+                  echo '<li><a class="fancybox fancybox.iframe" href="./user/favorite.php?action=getfavor">收藏</a></li>';
+              } ?>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -312,24 +325,6 @@ $islogin = islogin();
             <p>测试阶段，提供的展示可能不完善，后续会完善.</p>
             <div class="content-list"></div>
           </div>
-           <!--
-          <div class="row-fluid">
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div>
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div>
-            <div class="span4">
-              <h2>Heading</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
-            </div>
-          </div>-->
         </div><!--/span-->
       </div><!--/row-->
 

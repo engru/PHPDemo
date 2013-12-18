@@ -15,7 +15,7 @@ require '../../function/func-user.php';
 error_reporting(-9);
 $islogin = islogin();
 $action = $_GET['action'];
-$sid = $_GET['sid'];
+$sid = $_GET['sid'];        //订阅的站点
 if($islogin){
     if($action){
         if($action=='addSubs'){
@@ -59,9 +59,9 @@ function subsUI($islogin){
 <script type="text/javascript" src="http://www.w3school.com.cn/jquery/jquery.js"></script>
         <style>
         ul{
-            width: 360px;
+            width: auto;
             margin: 0 auto;
-            padding: 20px 50px;
+            padding: 0px 20px;
             background: #ccc;  
         }
         ul li{

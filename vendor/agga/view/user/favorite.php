@@ -50,16 +50,31 @@ function getfavor($uid){
         a{
             text-decoration: none; 
         }
+        span{
+            width: 20px;
+            height: 20px;
+            border: 1px solid #e5e5e5;
+            display: inline-block;
+            line-height: 20px;
+            text-align: center;
+            margin-right: 12px;
+            float: left;
+            background: #db2323;
+            border-color: #db2323;
+            color: #fff;
+
+        }
     </style>
     <!--查询收藏-->
     <ul>
-        <?php foreach (getFavorList($uid) as $favor){?>
+        <?php $index=1; foreach (getFavorList($uid) as $favor){?>
           <li class="site-link">
-              <a target="_blank" style="float:left" href="../showarticle.php?id=<?php echo $favor['sid'] ?>&url=<?php echo $favor['aid'] ?>&local=y"><?php echo $favor['title']?></a>
+              <span class="topRank"><?php echo $index ?></span>
+              <a target="_blank" href="../showarticle.php?id=<?php echo $favor['sid'] ?>&url=<?php echo $favor['aid'] ?>&local=y"><?php echo $favor['title']?></a>
               
               <div style="clear:both"></div>
           </li>
-        <?php } ?>
+        <?php $index++; } ?>
     </ul>
     <?php
     

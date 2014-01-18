@@ -9,13 +9,16 @@ require '../function/func-db.php';
 require '../class/db/db.php';
 require '../function/func-core.php';
 require '../function/func-user.php';
-error_reporting(0);
+require '../function/func-group.php';
+require '../function/func-group-article.php';
+error_reporting(-9);
 
 $islogin = islogin();
 $req = $_SERVER['QUERY_STRING'];
 $id = $_GET['id'];
 $url= $_GET['url'];
 $local=$_GET['local'];
+$group=$_GET['group'];
 
 $res = getSite($id);
 
@@ -147,7 +150,11 @@ a:hover{
 
 
 if($local){
-    $article = getArticle($url);
+    if($id){
+        $article = getArticle($url);
+    }else{
+        $article = getGroupArticle($url);
+    }
     //var_dump($article);
     echo '<div class="container">';
     echo '<div class="title"><h1>'.$article[0][title].'<h1></div>';
@@ -155,13 +162,13 @@ if($local){
     //echo $html->find($res[arti_attri_label],0);
     echo '<div class="meta">'.$res[0][site_name].'  '.date('Y-m-d H:i', $article[0][date]);//'.'</div>';
     if($islogin){
-    $fav = getFavorite($islogin,$article[0][aid]);
-    //var_dump($fav);
-    if($fav==''){
-        echo '  <a href="javascript:ajax_request(\'./user/favorite.php?action=addfavor&aid='.$article[0][aid].'\')">收藏</a>';
-    }else{
-        echo '  <a href="javascript:ajax_request(\'./user/favorite.php?action=delfavor&aid='.$article[0][aid].'\')">已收藏</a>';
-    }
+        $fav = getFavorite($islogin,$article[0][aid]);
+        //var_dump($fav);
+        if($fav==''){
+            echo '  <a href="javascript:ajax_request(\'./user/favorite.php?action=addfavor&aid='.$article[0][aid].'\')">收藏</a>';
+        }else{
+            echo '  <a href="javascript:ajax_request(\'./user/favorite.php?action=delfavor&aid='.$article[0][aid].'\')">已收藏</a>';
+        }
     }
     echo '</div>';
 

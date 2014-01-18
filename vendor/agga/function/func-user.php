@@ -31,6 +31,13 @@ function islogin(){
         return $res;
 }
 
+
+//获取用户信息
+function getUser($uid){
+    $sql = "select * from pre_user where uid=$uid";
+    return query($sql);
+}
+
 //查询是否已经注册，并执行注册操作
 function isRegister($username){
     $sql = "select * from pre_user where username='$username'";

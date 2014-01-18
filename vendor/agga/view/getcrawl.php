@@ -116,6 +116,11 @@ foreach ($articles as $article){
  //echo '<li class="site-link"><a style="float:left" href="javascript:ajax_request(\'test.php?'.$site[sid].'\')">'.$site[site_name].'</a>'
  //         .'<a class="fancybox fancybox.iframe" style="float:right" href="./site-edit.php?'.$site[sid].'">+</a>'
  //         .'<div style="clear:both"></div></li>';
+    if(!$article[thumbnail]){
+        $article[thumbnail] = '<img src="../static/img/default.png" class="j-info img">';
+    }
+    
+    
         echo '<div class="article-item">'
         //找图片
         .'<div class="item-img"><img src="'.$article[thumbnail].'" width="200px" height="100px"/>'

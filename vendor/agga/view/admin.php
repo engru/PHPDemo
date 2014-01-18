@@ -24,9 +24,10 @@ $islogin = islogin();
     <!-- Le styles -->
     <link href="http://v2.bootcss.com/assets/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
-      body {
-        padding-top: 60px;
-      }
+        body{
+            padding-top: 60px;
+        }
+        
       .sidebar-nav {
         padding: 9px 0;
       }
@@ -195,6 +196,8 @@ $islogin = islogin();
               <strong>/</strong>
               <a class="fancybox fancybox.iframe navbar-link" href="./user/user.php?action=register">注册</a>
               <?php }?>
+              
+              <a class="navbar-link" href="group/group.php">易云消息组平台</a>
             </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -351,7 +354,10 @@ $islogin = islogin();
             }
       </style>
       <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
+        <p>
+            &copy; Company 2013
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000211641'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000211641%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+        </p>:3
+              </footer>
   </body>
 </html>

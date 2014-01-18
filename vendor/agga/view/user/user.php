@@ -25,7 +25,7 @@ if($action=='register'){
     u_logout();
 }else{
     //查询
-    getuser();
+    u_getuser();
 }
 
 function u_register(){
@@ -157,7 +157,7 @@ function u_login(){
     }
 }
 
-function getuser(){
+function u_getuser(){
     echo '获取用户信息';
 }
 
